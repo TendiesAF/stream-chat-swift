@@ -614,19 +614,26 @@ private extension ChatMessage {
                 $_currentUserReactions = ({ [] }, nil)
             } else {
                 $_currentUserReactions = ({
-                    let ownReactionsPayload = try? JSONDecoder.default.decode(
+                    let ownReactionsPayload: [ChatMessageReaction]? = try? JSONDecoder.default.decode(
                         [MessageReactionPayload].self,
                         from: dto.ownReactions
-                    ).map {
-                        ChatMessageReaction(
-                            type: $0.type,
-                            score: $0.score,
-                            createdAt: $0.createdAt,
-                            updatedAt: $0.updatedAt,
-                            author: UserDTO.load(id: $0.user.id, context: context)!.asModel(),
-                            extraData: $0.extraData
+                    ).compactMap { payload -> ChatMessageReaction? in
+                        guard let userDTO = try? context.saveUser(payload: payload.user, query: nil) else {
+                            return nil
+                        }
+
+                        let user = userDTO.asModel()
+
+                        return ChatMessageReaction(
+                            type: payload.type,
+                            score: payload.score,
+                            createdAt: payload.createdAt,
+                            updatedAt: payload.updatedAt,
+                            author: user,
+                            extraData: payload.extraData
                         )
                     }
+
                     return Set(ownReactionsPayload ?? [])
                 }, dto.managedObjectContext)
             }
