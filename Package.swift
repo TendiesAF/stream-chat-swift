@@ -22,7 +22,7 @@ let package = Package(
     ],
     dependencies: [
         // StreamChat
-        .package(url: "https://github.com/daltoniam/Starscream.git", from: "4.0.0"),
+        .package(name: "NewStarscream", url: "https://github.com/daltoniam/Starscream.git", from: "4.0.0"),
         
         // StreamChatUI
         .package(url: "https://github.com/kean/Nuke.git", from: "10.0.0"),
@@ -31,7 +31,7 @@ let package = Package(
     targets: [
         .target(
             name: "StreamChat",
-            dependencies: ["Starscream"],
+            dependencies: [.product(name: "Starscream", package: "NewStarscream"),],
             exclude: ["README.md", "Info.plist"] + streamChatSourcesExcluded,
             resources: [.copy("Database/StreamChatModel.xcdatamodeld")]
         ),
