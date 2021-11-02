@@ -6,17 +6,17 @@
         "repositoryURL": "https://github.com/kean/Nuke.git",
         "state": {
           "branch": null,
-          "revision": "c0b32b0d7154afceb3fc08b199492f125ff4267e",
-          "version": "10.3.3"
+          "revision": "472a03c15f39592007d94f25abe554350bc8aa2b",
+          "version": "10.5.1"
         }
       },
       {
-        "package": "Starscream",
-        "repositoryURL": "https://github.com/daltoniam/Starscream.git",
+        "package": "TendiesStarscream",
+        "repositoryURL": "https://github.com/TendiesAF/Starscream.git",
         "state": {
-          "branch": null,
-          "revision": "df8d82047f6654d8e4b655d1b1525c64e1059d21",
-          "version": "4.0.4"
+          "branch": "tendies/collision-fix",
+          "revision": "6c41ee413d3d4f741274ffec29d69f81d6dc35cd",
+          "version": null
         }
       },
       {
