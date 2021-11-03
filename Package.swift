@@ -23,7 +23,7 @@ let package = Package(
     dependencies: [
         // StreamChat
         .package(
-            url: "https://github.com/TendiesAF/Starscream.git",
+            url: "https://github.com/TendiesAF/TendiesStarscream.git",
             .branch("tendies/collision-fix")
         ),
         
@@ -34,7 +34,7 @@ let package = Package(
     targets: [
         .target(
             name: "StreamChat",
-            dependencies: [.product(name: "TendiesStarscream", package: "Starscream")],
+            dependencies: [.product(name: "TendiesStarscream", package: "TendiesStarscream")],
             exclude: ["README.md", "Info.plist"] + streamChatSourcesExcluded,
             resources: [.copy("Database/StreamChatModel.xcdatamodeld")]
         ),

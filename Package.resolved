@@ -11,21 +11,21 @@
         }
       },
       {
-        "package": "TendiesStarscream",
-        "repositoryURL": "https://github.com/TendiesAF/Starscream.git",
-        "state": {
-          "branch": "tendies/collision-fix",
-          "revision": "6c41ee413d3d4f741274ffec29d69f81d6dc35cd",
-          "version": null
-        }
-      },
-      {
         "package": "SwiftyGif",
         "repositoryURL": "https://github.com/kirualex/SwiftyGif.git",
         "state": {
           "branch": null,
           "revision": "0cd770feed5807d9fd4fa8df5ad74b56b814b0c8",
           "version": "5.4.0"
+        }
+      },
+      {
+        "package": "TendiesStarscream",
+        "repositoryURL": "https://github.com/TendiesAF/TendiesStarscream.git",
+        "state": {
+          "branch": "tendies/collision-fix",
+          "revision": "6c41ee413d3d4f741274ffec29d69f81d6dc35cd",
+          "version": null
         }
       }
     ]
